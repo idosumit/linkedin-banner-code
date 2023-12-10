@@ -1,0 +1,80 @@
+/* 
+    Note: This style includes geometric elements and a gradient background.
+*/
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Poppins', sans-serif;
+}
+
+.header {
+    width: 1584px;
+    height: 396px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background: linear-gradient(to right, #d5eaf5, #f5f3ff, #f5ddda); /* Warm gradient background */
+    color: #324AB2; /* Text color */
+    overflow: hidden; /* Hide overflow from additional elements */
+    text-align: right; /* Align text to the right */
+}
+
+/* Circular shapes */
+.header::before, .header::after {
+    content: '';
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: rgba(255, 255, 255, 0.1); /* Light shapes for subtle contrast */
+    border-radius: 50%;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+}
+
+.header::before {
+    left: 10%;
+    top: -50px;
+}
+
+.header::after {
+    right: 10%;
+    bottom: -50px;
+}
+
+.content {
+    text-align: center;
+    position: relative; /* Ensuring the content is above the background */
+    z-index: 1;
+}
+
+.name {
+    font-size: 58px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.tagline {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.links a {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    color: #324AB2;
+    font-size: 20px;
+    margin: 0 10px;
+    padding: 5px 10px;
+    background-color: #CCCCFF;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    text-align: right; /* Align text to the right */
+}
+
+.links img {
+    width: 24px;
+    margin-right: 8px;
+}

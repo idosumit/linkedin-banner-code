@@ -1,7 +1,4 @@
-/* 
-    Note: This style includes geometric elements and a gradient background.
-*/
-
+/* Base styles */
 body, html {
     margin: 0;
     padding: 0;
@@ -10,16 +7,11 @@ body, html {
 }
 
 .header {
-    width: 1584px;
-    height: 396px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    width: 1800px;
+    height: 600px;
     position: relative;
-    background: linear-gradient(to right, #d5eaf5, #f5f3ff, #f5ddda); /* Warm gradient background */
-    color: #324AB2; /* Text color */
-    overflow: hidden; /* Hide overflow from additional elements */
-    text-align: right; /* Align text to the right */
+    background: linear-gradient(to right, #f5ddda, #f5f3ff, #d5eaf5); /* Warm gradient background */
+    overflow: hidden;
 }
 
 /* Circular shapes */
@@ -34,8 +26,9 @@ body, html {
 }
 
 .header::before {
-    left: 10%;
-    top: -50px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .header::after {
@@ -43,38 +36,59 @@ body, html {
     bottom: -50px;
 }
 
+/* Content alignment */
 .content {
-    text-align: center;
-    position: relative; /* Ensuring the content is above the background */
-    z-index: 1;
+    position: absolute;
+    right: 10%; /* Space from the right border */
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; /* Aligns child elements to the right */
 }
 
+/* Name and tagline alignment */
 .name {
     font-size: 58px;
     font-weight: bold;
-    margin-bottom: 10px;
+    color: #324AB2;
+    margin: 0; /* Ensure no margin affects alignment */
+    text-align: right; /* Right align text */
 }
 
 .tagline {
     font-size: 32px;
-    margin-bottom: 20px;
+    color: #324AB2;
+    margin-top: 10px; /* Space above the tagline */
+    margin-bottom: 30px; /* Increased space between tagline and links */
+    text-align: right; /* Right align text */
 }
 
-.links a {
-    display: inline-flex;
+/* Link styles */
+.links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; /* Align links to the right */
+}
+
+.link a {
+    display: flex;
     align-items: center;
+    justify-content: flex-start; /* Align text and logo within the link to the left */
     text-decoration: none;
+    font-size: 25px;
     color: #324AB2;
-    font-size: 20px;
-    margin: 0 10px;
+    background-color: rgba(185, 213, 249, 1.0);
     padding: 5px 10px;
-    background-color: #CCCCFF;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    text-align: right; /* Align text to the right */
+    margin-bottom: 10px; /* Space between links */
+    width: fit-content; /* Background only covers content */
+    margin-right: 0; /* Align right edge of background with content container */
+    text-align: right; /* Right align text within the link */
 }
 
-.links img {
+.link img {
     width: 24px;
     margin-right: 8px;
 }
